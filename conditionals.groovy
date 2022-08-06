@@ -1,6 +1,6 @@
-pipeline { // must be top level;
-    agent any //where to execute
-    stages { //where the "work" happens
+pipeline { 
+    agent any 
+    stages { 
         stage("build") {
             steps {
                 echo 'building the application'
@@ -9,6 +9,11 @@ pipeline { // must be top level;
         }
 
         stage("test") {
+            when {
+                expression {
+                    
+                }
+            }
             steps {
                 echo 'testing the application'
             }

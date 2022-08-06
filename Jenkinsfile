@@ -24,4 +24,17 @@ pipeline { // must be top level;
             }
         }
     }
+
+    post { //executes some logic after aall stages executed
+        always{
+            // will be executed regardless of build failure of success
+        }
+    }
 }
+
+/*
+post conditions:
+always- gives directive of what needs to happens regardless of build failure or success
+success- what needs to happen if the build is successful
+failure- what needs to happens after a failure 
+*/
