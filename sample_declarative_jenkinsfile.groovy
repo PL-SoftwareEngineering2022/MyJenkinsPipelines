@@ -1,13 +1,10 @@
-pipeline { // must be top level;
-
+pipeline { // must be top leve;
     agent any //where to execute
-
     stages { //where the "work" happens
-
         stage("build") {
             steps {
                 echo 'building the application'
-                //sh 'mvn package'
+                sh 'mvn package'
             }
         }
 

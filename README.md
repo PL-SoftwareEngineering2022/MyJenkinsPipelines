@@ -1,2 +1,2 @@
 # MyJenkinsPipelines
-- Constructing a declarive Jenkinsfile
+- Constructing a declarative Jenkinsfile
