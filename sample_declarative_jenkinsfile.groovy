@@ -21,4 +21,10 @@ pipeline { // must be top level;
             }
         }
     }
+
+    post { //executes some logic after aall stages executed
+        always{
+            // will be executed regardless of build failure of success
+        }
+    }
 }
