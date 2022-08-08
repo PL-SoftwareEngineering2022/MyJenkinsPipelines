@@ -27,7 +27,7 @@ pipeline {
 2. enviromnmental variables can also be used to set credentials in Jenkins.
 - define credentials in Jenkins GUI
 - "credentials("credentialId")" binds the credentials defined in Jenkins to your enviromnmental variable
-- for that, you need "Credentials Binding" Plugin. As a parameter it takes the ID reference of the credentials in Jenkins
+- for that, you need to install both the "Credentials" Plugin and the "Credentials Binding" Plugin. As a parameter it takes the ID reference of the credentials in Jenkins
 
 OR:
 
@@ -52,9 +52,9 @@ pipeline {
             steps{
                 echo 'deploying the application'
                 withCredentials([
-                    usernamePassword()
+                    usernamePassword(credentials: 'server-credentials', usernameVariable: USER, passwordVariable: PWD)
                 ]) {
-
+                    sh "mvn deploy ${USER} ${PWD}"
                 }
             }
         }
